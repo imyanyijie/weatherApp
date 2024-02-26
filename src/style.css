@@ -3,3 +3,89 @@
     margin: 0;
     box-sizing: border-box;
 }
+:root{
+    --header-background-color: #1992d4;
+    --header-button-color: #1d79aa;
+    --header-button-focus-color: #0a4564;
+    --header-text-color: white;
+    --card-background-color:#e2e8f0;
+}
+
+body{
+    display: grid;
+    grid-template-rows: 5rem 1fr;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    padding: 1rem;
+    justify-content: space-between;
+    background-color: var(--header-background-color);
+}
+.header form{
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+}
+form #header-img{
+    height: 2rem;
+    width: 2rem;
+    align-self: center;
+}
+form input{
+    height: 2rem;
+    align-self: center;
+    flex: 1;
+    border-radius: 5px;
+    border-style: none;
+}
+
+.header #search{
+    height: 2rem;
+    width: 10rem;
+    color: var(--header-text-color);
+    border-style: none;
+    border-radius: 10px;
+    background-color: var(--header-button-color);
+    align-self: center;
+}
+
+.header #search:active{
+    background-color: var(--header-button-focus-color);
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(20rem,1fr));
+    margin: 2rem;
+}
+
+.container .card{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    background-color: var(--card-background-color);
+    border-style:solid;
+    border-width: 2px;
+    border-radius: 10px;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.card #temp-img{
+    height: 5rem;
+    width: 5rem;
+    align-self: center;
+}
+
+.card #location{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card #temp{
+    font-size: 2rem;
+    font-weight: bold;
+    border-style: none;
+    background-color: transparent;
+}
