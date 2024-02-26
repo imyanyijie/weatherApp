@@ -43,7 +43,8 @@ form input{
 
 .header #search{
     height: 2rem;
-    width: 10rem;
+    max-width: 10rem;
+    flex: 0.2;
     color: var(--header-text-color);
     border-style: none;
     border-radius: 10px;
@@ -72,15 +73,17 @@ form input{
     gap: 2rem;
 }
 
-.card #temp-img{
+.card img{
     height: 5rem;
     width: 5rem;
     align-self: center;
 }
 
-.card #location{
-    font-size: 2rem;
+.card p{
+    font-size: 1.5rem;
     font-weight: bold;
+    align-self: center;
+
 }
 
 .card #temp{

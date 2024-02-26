@@ -1,87 +1,37 @@
-<head><script defer src="runtime.bundle.js"></script><script defer src="main.bundle.js"></script></head>Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Module build failed (from ./node_modules/html-loader/dist/cjs.js):
-  ValidationError: Invalid options object. HTML Loader has been initialized using an options object that does not match the API schema.
-   - options has an unknown property 'root'. These properties are valid:
-     object { preprocessor?, sources?, minimize?, esModule? }
-      at validate (F:\project\odin\weatherApp\node_modules\schema-utils\dist\validate.js:191:11)
-      at Object.getOptions (F:\project\odin\weatherApp\node_modules\webpack\lib\NormalModule.js:646:19)
-      at Object.loader (F:\project\odin\weatherApp\node_modules\html-loader\dist\index.js:18:27)
-  ModuleBuildError: Module build failed (from ./node_modules/html-loader/dist/cjs.js):
-  ValidationError: Invalid options object. HTML Loader has been initialized using an options object that does not match the API schema.
-   - options has an unknown property 'root'. These properties are valid:
-     object { preprocessor?, sources?, minimize?, esModule? }
-      at validate (F:\project\odin\weatherApp\node_modules\schema-utils\dist\validate.js:191:11)
-      at Object.getOptions (F:\project\odin\weatherApp\node_modules\webpack\lib\NormalModule.js:646:19)
-      at Object.loader (F:\project\odin\weatherApp\node_modules\html-loader\dist\index.js:18:27)
-      at processResult (F:\project\odin\weatherApp\node_modules\webpack\lib\NormalModule.js:841:19)
-      at F:\project\odin\weatherApp\node_modules\webpack\lib\NormalModule.js:964:5
-      at F:\project\odin\weatherApp\node_modules\loader-runner\lib\LoaderRunner.js:400:11
-      at F:\project\odin\weatherApp\node_modules\loader-runner\lib\LoaderRunner.js:252:18
-  
-  - validate.js:191 validate
-    [weatherApp]/[schema-utils]/dist/validate.js:191:11
-  
-  - NormalModule.js:646 Object.getOptions
-    [weatherApp]/[webpack]/lib/NormalModule.js:646:19
-  
-  - index.js:18 Object.loader
-    [weatherApp]/[html-loader]/dist/index.js:18:27
-  
-  - ModuleBuildError: Module build failed (from ./node_modules/html-loader/dist/cjs.js):
-  
-  - ValidationError: Invalid options object. HTML Loader has been initialized using an options object that does not match the API schema.
-  
-  - - options has an unknown property 'root'. These properties are valid:
-  
-  - object { preprocessor?, sources?, minimize?, esModule? }
-  
-  - validate.js:191 validate
-    [weatherApp]/[schema-utils]/dist/validate.js:191:11
-  
-  - NormalModule.js:646 Object.getOptions
-    [weatherApp]/[webpack]/lib/NormalModule.js:646:19
-  
-  - index.js:18 Object.loader
-    [weatherApp]/[html-loader]/dist/index.js:18:27
-  
-  - NormalModule.js:841 processResult
-    [weatherApp]/[webpack]/lib/NormalModule.js:841:19
-  
-  - NormalModule.js:964 
-    [weatherApp]/[webpack]/lib/NormalModule.js:964:5
-  
-  - LoaderRunner.js:400 
-    [weatherApp]/[loader-runner]/lib/LoaderRunner.js:400:11
-  
-  - LoaderRunner.js:252 
-    [weatherApp]/[loader-runner]/lib/LoaderRunner.js:252:18
-  
-  - child-compiler.js:174 
-    [weatherApp]/[html-webpack-plugin]/lib/child-compiler.js:174:18
-  
-  - Compiler.js:564 finalCallback
-    [weatherApp]/[webpack]/lib/Compiler.js:564:5
-  
-  - Compiler.js:590 
-    [weatherApp]/[webpack]/lib/Compiler.js:590:11
-  
-  - Compiler.js:1213 
-    [weatherApp]/[webpack]/lib/Compiler.js:1213:17
-  
-  
-  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
-    [weatherApp]/[tapable]/lib/Hook.js:18:14
-  
-  - Compiler.js:1209 
-    [weatherApp]/[webpack]/lib/Compiler.js:1209:33
-  
-  - Compilation.js:2802 finalCallback
-    [weatherApp]/[webpack]/lib/Compilation.js:2802:11
-  
-  - Compilation.js:3107 
-    [weatherApp]/[webpack]/lib/Compilation.js:3107:11
-  
-  
-</pre>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+<script defer src="runtime.bundle.js"></script><script defer src="main.bundle.js"></script></head>
+<body>
+    <div class="header">
+        <form class="location-form">
+            <img id="header-img" src="54ff7732bb1a5ff166c6.svg" alt="">
+            <input type="text" name="location" id="location" placeholder="Please enter your location.">
+        </form>
+        <button id="search" value="Search" form="location-form">Search</button>
+    </div>
+    <div class="container">
+        <!-- setting up a template weather card -->
+        <div class="card">
+            <img id="temp-img" src="54ff7732bb1a5ff166c6.svg" alt="">
+            <p id="location">location test</p>
+            <button id="temp">55 c</button>
+        </div>
+        <div class="card">
+            <img id="temp-img" src="54ff7732bb1a5ff166c6.svg" alt="">
+            <p id="location">location test</p>
+            <button id="temp">55 c</button>
+        </div>
+        <div class="card">
+            <img id="temp-img" src="54ff7732bb1a5ff166c6.svg" alt="">
+            <p id="location">location test</p>
+            <button id="temp">55 c</button>
+        </div>
+    </div>
+
+    
+</body>
+</html>

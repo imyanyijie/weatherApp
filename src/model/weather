@@ -1,0 +1,62 @@
+let apiKey = "da17578d0d4144b999a213234242602";
+
+const container = document.querySelector(".container");
+
+async function getWeather(city){
+    try{
+        let response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`);
+        let data  = await response.json();
+        let weather = {
+            location: `${data.location.name}, ${data.location.country}`,
+            text: data.current.condition.text,
+            icon: data.current.condition.icon,
+            feelslike_c: data.current.feelslike_c,
+            feelslike_f: data.current.feelslike_f,
+            temp_c: data.current.temp_c,
+            temp_f: data.current.temp_f,
+            humidity: data.current.humidity,
+        }
+        return weather;
+    }
+    catch(e){
+        console.log(e);
+        return null;
+    }
+}
+
+async function createCard(data){
+    let weather = await data;
+    console.log("creating cards");
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    const weatherPic = new Image();
+    weatherPic.src = weather.icon;
+
+    const location = document.createElement("p");
+    location.id = "location";
+    location.textContent = weather.location;
+
+    const condition = document.createElement("p");
+    condition.id = "condition";
+    condition.textContent ='Condition: '+ weather.text;
+
+    const temp = document.createElement("button");
+    temp.id = "temp";
+    temp.textContent = weather.temp_c+'C';
+
+    card.appendChild(weatherPic);
+    card.appendChild(location);
+    card.appendChild(condition);
+    card.appendChild(temp);
+    temp.addEventListener("click",(e)=>{
+        if(temp.textContent.includes("C"))
+            temp.textContent = weather.temp_f+" F";
+        else
+            temp.textContent = weather.temp_c+" C";
+    });
+    container.appendChild(card);
+}
+
+
+export{getWeather, createCard};
