@@ -24,8 +24,7 @@ async function getWeather(city){
     }
 }
 
-async function createCard(data){
-    let weather = await data;
+async function createCard(weather){
     console.log("creating cards");
     const card = document.createElement("div");
     card.classList.add("card");
@@ -41,9 +40,9 @@ async function createCard(data){
     condition.id = "condition";
     condition.textContent ='Condition: '+ weather.text;
 
-    const temp = document.createElement("button");
+    let temp = document.createElement("button");
     temp.id = "temp";
-    temp.textContent = weather.temp_c+'C';
+    temp.textContent = weather.temp_c+' C';
 
     card.appendChild(weatherPic);
     card.appendChild(location);
